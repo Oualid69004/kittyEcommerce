@@ -5,7 +5,7 @@
       <%= link_to root_path, class: "navbar-brand" do %>
             <span style="font-size: 30px; line-height:30px; color: #14439C;">
 
-						  <i class="fas fa-bell"></i>
+						 <i class="fas fa-cat"></i>
 						</span>
       <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span></button>
@@ -18,35 +18,25 @@
         </ul>
 
         <!-- If user is logged in -->
-        <%if user_signed_in?%>
-          <ul class="navbar-nav align-items-center mr-0">
-            <li class="nav-item">
-              <% if user_signed_in? %>
-              <%= link_to cart_path(current_user.cart.id), class:"nav-link" do %>
-                 <span style="font-size: 20px; line-height:20px;">
-
-                   <i class="fas fa-shopping-bag"></i><small style= "color:#14439C"> (<%=current_user.carts.last.reservations.size %>)</small>
+        <% if user_signed_in? %>
+          <%= link_to cart_path(current_user.cart.id), class:"nav-link" do %>
+                 <span style="font-size: 30px; line-height:30px;">
+                <i class="fas fa-shopping-basket"></i><small class="text-light"> (<%=current_user.cart.items.length %>)</small>
                  </span>
-                <% end %>
-              <% end %>
-            </li>
+          <% end %>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.email %>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_url, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
-          </ul>
+          <div class="navbar-item has-dropdown is-hoverable">
+
+            <div class="navbar-dropdown is-right">
+              <%= link_to current_user.email, edit_user_registration_path, class:"text-light" %>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"text-light" %>
+            </div>
+          </div>
         <% else %>
-          <ul class="navbar-nav align-items-center mr-0">
-            <li class="nav-item">
-              <%= link_to "Se connecter / s'inscrire", new_user_registration_path, class: "nav-link"%>
-            </li>
-          </ul>
+
+          <%= link_to "Sign In ", new_user_session_path, class:"navbar-item button text-light" %>
+          <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button text-light"%>
+
         <% end %>
 
 
