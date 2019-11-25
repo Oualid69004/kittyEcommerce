@@ -16,8 +16,8 @@
             <%= link_to 'Découvrir', item_path(item.id), class: 'btn btn-orange' %>
             <br><br>
             <%if user_signed_in?%>
-              <% if current_user.carts.last.items.where(id: item.id).empty?  %>
-                <%=link_to 'Ajout rapide au panier', item_reservations_path(item.id), method: :post, class: "btn btn-primary btn-sm"%>
+              <% if current_user.cart.item == nil  %>
+                <%=link_to 'Ajout rapide au panier', root_path, method: :post, class: "btn btn-primary btn-sm"%>
               <%else%>
                 <small class="text-primary">Déjà dans votre panier</small>
               <% end %>
