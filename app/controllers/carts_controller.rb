@@ -10,6 +10,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+
   end
 
 
@@ -22,15 +23,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1/edit
   def edit
-    @cart = Cart.find(params[:id])
-    @cart_amount = cart_price(@cart.id)
-    @items = @cart.cart_items.order(:id)
 
-    #Statut modifié
-    if @cart.status = 'created'
-      @cart.status = 'displayed'
-      @cart.save
-    end
 
   end
 
@@ -85,12 +78,5 @@ class CartsController < ApplicationController
       params.fetch(:cart, {})
     end
 
-    def cart_price(id)
-    total_price = 0
-    CartItem.where(cart_id: id).each { |item|
-      total_price += item.quantity * item.price
-    }
-    return total_price
-    end
 
 end

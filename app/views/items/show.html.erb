@@ -1,12 +1,12 @@
 <%= render "layouts/navbar_light" %>
 
 
-<div class="image image-overlay image-scrolling" style="background-image:url(<%=asset_path('le nom d limage')%>);     max-height: 750px;"
+<div class="image image-overlay image-scrolling" style="background-image:url(<%=asset_path('kit.jpg')%>);     max-height: 750px;"
      data--100-bottom-top="transform: translateY(0%);"
      data-top-bottom="transform: translateY(25%);">
 </div>
 
-<%= render "layouts/item_show_photo_description", property: @item %>
+<%= render "layouts/item_show_photo_description", item: @it %>
 
 <%= render "layouts/item_show_carrousel" %>
 
