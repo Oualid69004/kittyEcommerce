@@ -1,0 +1,7 @@
+<%= render 'layouts/navbar' %>
+
+<% @item.each do |property| %>
+  <%= render 'layouts/item_index_row', item: item %>
+<% end %>
+
+<%= render 'layouts/footer' %>
