@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :cart
+  has_many :orders
+  has_many  :items, through: :orders
+
 end
