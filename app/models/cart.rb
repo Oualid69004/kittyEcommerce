@@ -1,7 +1,7 @@
 class Cart < ApplicationRecord
-  belongs_to :user
-  has_many :items
-  belongs_to :item
+  belongs_to :user, optional: true
+  #has_many :items
+  belongs_to :item, optional: true
 
 
 end
