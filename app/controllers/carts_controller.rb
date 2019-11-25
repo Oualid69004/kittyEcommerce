@@ -10,6 +10,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+
   end
 
 
@@ -76,7 +77,6 @@ class CartsController < ApplicationController
     def cart_params
       params.fetch(:cart, {})
     end
-
 
 
 end
