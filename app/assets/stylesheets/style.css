@@ -1,0 +1,9 @@
+.item h3{
+    font-weight: 600;
+}
+
+.item ul {
+    padding-left: 0.5em;
+    list-style: none;
+    line-height: 2em;
+}
