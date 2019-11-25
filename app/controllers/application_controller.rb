@@ -5,7 +5,7 @@ private
   def current_cart
      if current_user && current_user.cart == nil
       @current_cart = Cart.create(user: current_user)
-      current_user.cart = @current_cart
+      current_user.update(cart: @current_cart)
     end
   end
 end
