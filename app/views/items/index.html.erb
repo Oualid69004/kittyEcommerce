@@ -1,2 +1,7 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<%= render 'layouts/navbar' %>
+
+<% @item.each do |property| %>
+  <%= render 'layouts/item_index_row', item: item %>
+<% end %>
+
+<%= render 'layouts/footer' %>
