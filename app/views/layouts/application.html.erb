@@ -16,9 +16,8 @@
 <body id="body">
   <%= render 'layouts/navbar' %>
 
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>" role="alert m-0" style="margin-top:78px"><%= value %></div>
-  <% end %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 <%= yield %>
 </body>
 </html>
