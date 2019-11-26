@@ -4,6 +4,10 @@
   <%= item.title%><br>
   <%= item.description%><br>
   <%= item.price%> €<br>
+  <% @itemcarts = Itemcart.where(cart: current_user.cart) %>
+  <% @itemcart = @itemcarts.where(item: Item.find(item.id)) %>
+  <a href="<%= item_itemcart_path(item.id, @itemcart.first.id) %>" class="btn btn-danger" data-method='delete'>Supprimer</a>
+  <br>
   <br>
 <% end %>
 <%= @globalprice %> €<br><br>
