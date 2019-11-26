@@ -12,4 +12,29 @@
  *
  *= require_tree .
  *= require_self
+ *= mycss.css
  */
+
+.zoom {
+ -webkit-transition: all 0.35s ease-in-out;
+ -moz-transition: all 0.35s ease-in-out;
+ transition: all 0.35s ease-in-out;
+ cursor: -webkit-zoom-in;
+ cursor: -moz-zoom-in;
+ cursor: zoom-in;
+ }
+
+ .zoom:hover,
+ .zoom:active,
+ .zoom:focus {
+ /**adjust scale to desired size,
+ add browser prefixes**/
+ -ms-transform: scale(1.10);
+ -moz-transform: scale(1.10);
+ -webkit-transform: scale(1.10);
+ -o-transform: scale(1.10);
+ transform: scale(1.10);
+
+ position:relative;
+ z-index:100;
+ }

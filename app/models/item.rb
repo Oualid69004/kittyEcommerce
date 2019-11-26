@@ -5,6 +5,8 @@ class Item < ApplicationRecord
   has_many :orders
   has_many  :users, through: :orders
 
+
+
   has_many :itemcarts
   has_many :carts, through: :itemcarts
 end
