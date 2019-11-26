@@ -1,6 +1,8 @@
-
-<% @item.each do |i| %>
-  <%= render 'layouts/item_index_row', item: i %>
-<% end %>
-
+<div class="tab-content m-3" >
+    <div class="row">
+      <% @item.each do |i| %>
+        <%= render 'layouts/item_index_row', item: i %>
+      <% end %>
+    </div>
+</div>
 <%= render 'layouts/footer' %>
