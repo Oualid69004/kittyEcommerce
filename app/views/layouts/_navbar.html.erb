@@ -18,6 +18,37 @@
         </ul>
 
         <!-- If user is logged in -->
+        <%if user_signed_in?%>
+          <ul class="navbar-nav align-items-center mr-0">
+            <li class="nav-item">
+              <% if user_signed_in? %>
+                <%= link_to cart_path(current_user), class:"nav-link" do %>
+
+                <%= link_to cart_path(current_user), class:"nav-link" do %>
+                 <span style="font-size: 20px; line-height:20px;">
+                   <i class="fas fa-shopping-bag text-light"></i><small class="text-light"> (<%=current_user %>)</small>
+                 </span>
+                <% end %>
+              <% end %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.email %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Profile",  edit_user_registration_path(current_user), class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_url, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="navbar-nav align-items-center mr-0">
+            <li class="nav-item">
+              <%= link_to "Se connecter / s'inscrire", new_user_registration_path, class: "nav-link text-light"%>
+            </li>
+          </ul>
+        <% end %>
+        <% end %>
 
 
         <% if user_signed_in? %>
@@ -40,6 +71,7 @@
           <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button text-light"%>
 
         <% end %>
+
 
       </div>
     </nav>
