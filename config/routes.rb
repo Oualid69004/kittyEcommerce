@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'adminpage/index'
   get 'users/show'
   root to: 'items#index'
 
@@ -10,4 +9,7 @@ Rails.application.routes.draw do
     resources :order, only: [:create]
   end
   devise_for :users
+
+  resources :admins
+
 end
