@@ -19,16 +19,13 @@
           <h5 class="card-title"><%= item.title%> </h5>
           <h5 class="card-title"><%= item.description %> </h5>
           <p class="card-text"><%= item.price %>€</p>
-          <% if user_signed_in? %>
-            <% if current_user.cart.items.ids.empty?  %>
-              <%=link_to 'Postuler', item_reservations_path(item.id), method: :post, class: "btn btn-primary"%>
-            <%else%>
-              <b>Vous avez déjà reservé ce bien</b> <br>
-              <%=link_to 'Voir mon panier', cart_path(current_user.cart.id), class: ""%>
-            <% end %>
-          <%else%>
-            <%=link_to 'Postuler', new_user_registration_path, class: "btn btn-primary"%>
-          <%end%>
+          <%if user_signed_in?%>
+              <% if current_user.cart.items.include?(item)  %>
+              <small class="text-primary">Déjà dans votre panier</small>
+              <%else%>
+              <%=link_to 'Ajout rapide au panier',  item_itemcart_index_path(item.id), method: :post, class: "btn btn-primary btn-sm"%>
+              <% end %>
+            <%end%>
         </div>
         <div class="card-footer text-muted">
            days ago
