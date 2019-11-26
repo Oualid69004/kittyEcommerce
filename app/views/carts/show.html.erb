@@ -11,5 +11,6 @@
   <br>
 <% end %>
 <%= @globalprice %> €<br><br>
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Edit', edit_cart_path(@cart) %>
 <%= link_to 'Back', carts_path %>
+<a href="<%= cart_order_index_path(current_user.cart.id) %>" data-method="post" class="btn btn-success">Commander</a>

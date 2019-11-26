@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :items do
     resources :itemcart
   end
-  resources :carts
+  resources :carts do
+    resources :order, only: [:create]
+  end
   devise_for :users
 end
