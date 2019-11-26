@@ -17,10 +17,8 @@ ActiveRecord::Schema.define(version: 2019_11_26_153747) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_carts_on_item_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -62,10 +60,8 @@ ActiveRecord::Schema.define(version: 2019_11_26_153747) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -76,6 +72,10 @@ ActiveRecord::Schema.define(version: 2019_11_26_153747) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin"
