@@ -4,13 +4,17 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   def index
-    @carts = Cart.all
+    @cart = current_user.cart
   end
 
   # GET /carts/1
   # GET /carts/1.json
   def show
-
+    @globalprice = 0
+    @items = current_user.cart.items
+    @items.each do |item|
+      @globalprice += item.price
+    end
   end
 
 

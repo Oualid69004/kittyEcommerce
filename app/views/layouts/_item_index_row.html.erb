@@ -8,18 +8,18 @@
             <h5><%= item.price %> €</h5>
             <p class="card-text">
             <ul>
-              <li>Titre</li>
+
               <li><%= item.description %> m2</li>
-              <li>Titre</li>
+
             </ul>
             </p>
             <%= link_to 'Découvrir', item_path(item.id), class: 'btn btn-orange' %>
             <br><br>
             <%if user_signed_in?%>
-              <% if current_user.carts.last.items.where(id: item.id).empty?  %>
-                <%=link_to 'Ajout rapide au panier', item_reservations_path(item.id), method: :post, class: "btn btn-primary btn-sm"%>
+              <% if current_user.cart.items.include?(item)  %>
+              <small class="text-primary">Déjà dans votre panier</small>
               <%else%>
-                <small class="text-primary">Déjà dans votre panier</small>
+              <%=link_to 'Ajout rapide au panier',  item_itemcart_index_path(item.id), method: :post, class: "btn btn-primary btn-sm"%>
               <% end %>
             <%end%>
           </div>
