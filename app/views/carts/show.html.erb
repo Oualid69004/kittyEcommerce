@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% @items.each do |item| %>
+  <%= item.title%><br>
+  <%= item.description%><br>
+  <%= item.price%> €<br>
+  <br>
+<% end %>
+<%= @globalprice %> €<br><br>
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
