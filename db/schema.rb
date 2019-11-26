@@ -24,15 +24,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_192724) do
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
-  create_table "item_to_carts", force: :cascade do |t|
-    t.bigint "cart_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_item_to_carts_on_cart_id"
-    t.index ["item_id"], name: "index_item_to_carts_on_item_id"
-  end
-
   create_table "itemcarts", force: :cascade do |t|
     t.bigint "cart_id"
     t.bigint "item_id"
