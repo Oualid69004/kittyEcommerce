@@ -1,7 +1,10 @@
 class ItemcartController < ApplicationController
   def create
     @itemcartforid = Itemcart.create(cart: current_user.cart, item: Item.find(params[:item_id]))
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path}
+      format.js {}
+    end
   end
 
   def destroy
