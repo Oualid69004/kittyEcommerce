@@ -1,80 +1,43 @@
-<header class="header-sticky header-dark headroom headroom--not-bottom headroom--pinned headroom--top", style= "background-color: #14439C;">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar_dark">
-
-      <%= link_to root_path, class: "navbar-brand" do %>
-            <span style="font-size: 30px; line-height:30px; color: #fff;">
-
-<i class="fas fa-cat"></i>
-            </span>
+<header>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <span style="font-size: 30px; line-height:30px; color: #fff;">
+        <i class="fas fa-cat"></i>
+      </span>
       <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span></button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav align-items-center mr-auto">
-          <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link text-light"%>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" <%= link_to "Home", root_path %><span class="sr-only">(current)</span></a>
           </li>
         </ul>
-
-        <!-- If user is logged in -->
-        <%if user_signed_in?%>
-          <ul class="navbar-nav align-items-center mr-0">
-            <li class="nav-item">
-              <% if user_signed_in? %>
-                <%= link_to cart_path(current_user), class:"nav-link" do %>
-
-                <%= link_to cart_path(current_user), class:"nav-link" do %>
-                 <span style="font-size: 20px; line-height:20px;">
-                   <i class="fas fa-shopping-bag text-light"></i><small class="text-light"> (<%=current_user %>)</small>
-                 </span>
-                <% end %>
-              <% end %>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.email %>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile",  edit_user_registration_path(current_user), class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_url, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
-          </ul>
-        <% else %>
-          <ul class="navbar-nav align-items-center mr-0">
-            <li class="nav-item">
-              <%= link_to "Se connecter / s'inscrire", new_user_registration_path, class: "nav-link text-light"%>
-            </li>
-          </ul>
-        <% end %>
-        <% end %>
-
-
         <% if user_signed_in? %>
           <%= link_to cart_path(current_user.cart.id), class:"nav-link" do %>
-                 <span style="font-size: 30px; line-height:30px;">
-                <i class="fas fa-shopping-basket"></i><small class="text-light"> (<%=current_user.cart.items.length %>)</small>
-                 </span>
+            <span style="font-size: 30px; line-height:30px;">
+              <i class="fas fa-shopping-basket"></i><small class="text-light"> (<%=current_user.cart.items.length %>)</small>
+            </span>
           <% end %>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-
-            <div class="navbar-dropdown is-right">
-              <%= link_to current_user.email, edit_user_registration_path, class:"text-light" %>
-              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"text-light" %>
+          <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</button>
+            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="btnGroupDrop1">
+              <%= link_to current_user.email, edit_user_registration_path, class:"dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
             </div>
           </div>
         <% else %>
-
-          <%= link_to "Sign In ", new_user_session_path, class:"navbar-item button text-light" %>
-          <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button text-light"%>
-
-        <% end %>
-
-
-
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Se connecter</button>
+            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="btnGroupDrop1">
+              <%= link_to "Sign In ", new_user_session_path, class:"dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Sign up", new_user_registration_path, class:"dropdown-item"%>
+            </div>
+          </div>
+        <%end%>
       </div>
     </nav>
-  </div>
 </header>

@@ -1,3 +1,10 @@
-<div class="col-xs-12 col-md-3">
-  <a href="<%= item_path(item.id) %>"><img src="<%=asset_path('kit.jpg')%>" class="img-fluid border zoom" style="max-width: 20em"></a>
-</div>
+
+  <div class="col-md-6 col-lg-4 item zoom-on-hover">
+      				<a class="lightbox" href="<%= item_path(item.id) %>">
+      					<img class="img-fluid image" src="<%=asset_path(item.image_url)%>">
+      					<span class="description">
+      						<span class="description-heading"><%= item.title %></span>
+      						<span class="description-body"><%= item.description %></span>
+      					</span>
+      				</a>
+      			</div>
