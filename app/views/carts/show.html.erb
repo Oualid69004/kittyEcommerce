@@ -15,6 +15,29 @@
             </div>
         <div class="card-body">
 
+<<<<<<< HEAD
+=======
+<% @items.each do |item| %>
+
+
+
+
+
+  <%= item.title%><br>
+  <%= item.description%><br>
+  <%= item.price%> €<br>
+  <% @itemcarts = Itemcart.where(cart: current_user.cart) %>
+  <% @itemcart = @itemcarts.where(item: Item.find(item.id)) %>
+  <a href="<%= item_itemcart_path(item.id, @itemcart.first.id) %>" class="btn btn-danger" data-method='delete'>Supprimer</a>
+  <br>
+  <br>
+<% end %>
+
+<%= @globalprice %> €<br><br>
+<%= link_to 'Edit', edit_cart_path(@cart) %>
+<%= link_to 'Back', carts_path %>
+<a href="<%= cart_orderitem_index_path(current_user.cart.id) %>" data-method="post" class="btn btn-success">Commander</a>
+>>>>>>> master
 
 
   <% @items.each do |item| %>
