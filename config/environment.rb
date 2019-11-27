@@ -1,6 +1,6 @@
 # Load the Rails application.
 require_relative 'application'
-Dotenv.load 
+require 'dotenv'
 
 # Initialize the Rails application.
 Rails.application.initialize!
