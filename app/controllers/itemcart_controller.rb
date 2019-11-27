@@ -10,6 +10,9 @@ class ItemcartController < ApplicationController
   def destroy
     @itemcart = Itemcart.find(params[:id])
     @itemcart.destroy
-    redirect_to cart_path(current_user.cart.id)
+    respond_to do |format|
+      format.html { redirect_to cart_path(current_user.cart.id) }
+      format.js { }
+    end
   end
 end
