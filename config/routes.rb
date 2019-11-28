@@ -2,14 +2,14 @@ Rails.application.routes.draw do
   get 'users/show'
   root to: 'items#index'
 
-  resources :items do
+  resources :items, :path => "image" do
     resources :itemcart
   end
-  resources :carts do
+  resources :carts, :path => "panier" do
     resources :order, only: [:create]
     resources :orderitem, only: [:create]
   end
-  devise_for :users
+  devise_for :users, :path => "profile"
 
   resources :admins
 

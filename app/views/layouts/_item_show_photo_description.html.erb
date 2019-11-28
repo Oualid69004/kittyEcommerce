@@ -1,10 +1,10 @@
 <div class="component-example">
-  <div class="container" style="margin-top: 250px;">
+  <div class="container my-5">
     <div class="row">
       <div class="col-md-12">
         <figure  class="text-center">
           <a class="lightbox" href="<%=asset_path(item.image_url)%>" title="Image title">
-            <img src="<%=asset_path(item.image_url)%>" alt="Image">
+            <img src="<%=asset_path(item.image_url)%>" alt="Image" width="100%" height="auto" >
           </a>
         </figure>
       </div>
@@ -22,8 +22,12 @@
           <%if user_signed_in?%>
               <% if current_user.cart.items.include?(item)  %>
               <small class="text-primary">Déjà dans votre panier</small>
+              <br>
+              <%=link_to 'Continuer shopping',  root_path, class: "btn btn-primary btn-sm"%>
               <%else%>
-              <%=link_to 'Ajout rapide au panier',  item_itemcart_index_path(item.id), method: :post, class: "btn btn-primary btn-sm"%>
+              <%=link_to 'Ajout rapide au panier',  item_itemcart_index_path(item.id), method: :post, class: "btn btn-primary btn-sm", remote: true%>
+              <br><br>
+              <%=link_to 'Continuer shopping',  root_path, class: "btn btn-primary btn-sm"%>
               <% end %>
             <%end%>
         </div>
