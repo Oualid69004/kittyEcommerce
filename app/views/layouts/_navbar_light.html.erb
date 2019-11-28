@@ -1,72 +1,22 @@
-<header class="header-sticky header-dark headroom headroom--not-bottom headroom--pinned headroom--top">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar_light">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-      <%= link_to root_path, class: "navbar-brand" do %>
-            <span style="font-size: 30px; line-height:30px; color: #14439C;">
-
-						 <i class="fas fa-cat"></i>
-						</span>
-      <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span></button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav align-items-center mr-auto">
-          <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link"%>
-          </li>
-        </ul>
-
-        <!-- If user is logged in -->
-        <%if user_signed_in?%>
-          <ul class="navbar-nav align-items-center mr-0">
-            <li class="nav-item">
-              <% if user_signed_in? %>
-                <%= link_to cart_path(current_user), class:"nav-link" do %>
-                 <span style="font-size: 20px; line-height:20px;">
-
-                   <i class="fas fa-shopping-bag"></i><small style= "color:#14439C"> (<%=current_user %>)</small>
-                 </span>
-                <% end %>
-              <% end %>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.email %>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile",  edit_user_registration_path(current_user), class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_url, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
-          </ul>
-
-        <% if user_signed_in? %>
-          <%= link_to cart_path(current_user.cart.id), class:"nav-link" do %>
-                 <span style="font-size: 30px; line-height:30px;">
-                <i class="fas fa-shopping-basket"></i><small class="text-light"> (<%=current_user.cart.items.length %>)</small>
-                 </span>
-          <% end %>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-
-            <div class="navbar-dropdown is-right">
-              <%= link_to current_user.email, edit_user_registration_path, class:"text-light" %>
-              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"text-light" %>
-            </div>
-          </div>
-        <% else %>
-
-          <%= link_to "Sign In ", new_user_session_path, class:"navbar-item button text-light" %>
-          <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button text-light"%>
-
-        <% end %>
-        <% end %>
+<nav class="navbar navbar-default navbar-static">
+    <div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#">Large Dropdown Menu</a>
+	</div>
 
 
+	<div class="collapse navbar-collapse js-navbar-collapse">
+		
 
-      </div>
-    </nav>
-  </div>
-</header>
+	</div><!-- /.nav-collapse -->
+</nav>

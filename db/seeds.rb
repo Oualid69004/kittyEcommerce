@@ -20,7 +20,7 @@ images = [
 i = 0;
 10.times do
   Item.create(title: Faker::Address.street_address,
-                    price: rand(600..5000),
+                    price: rand(10..500),
                    description: Faker::Address.full_address,
                    image_url: images[i]
                  )
