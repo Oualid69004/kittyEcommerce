@@ -18,11 +18,11 @@ class OrderitemController < ApplicationController
         currency: 'eur',
       })
 
-      order = Order.create(user: current_user)
+      order = Order.new(user: current_user, items: current_user.cart.items)
       current_user.cart.items.each do |item|
-        Orderitem.create(order: order, item: item)
         Itemcart.find_by(cart: current_user.cart, item: item).destroy
       end
+      order.save
       flash[:success] = "Votre commande a bien été prise en compte"
       redirect_to root_path
 
