@@ -1,14 +1,18 @@
 class UserMailer < ApplicationMailer
   
-  def welcome_email(user)
-    #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-    @user = user
-
-    #on définit une variable @url qu'on utilisera dans la view d’e-mail
-    @url  = 'http://monsite.fr/login'
-
-    # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-    mail(to: @user.email, subject: 'Bienvenue chez nous !')
-  end
   
+  
+
+  default :from => 'any_from_address@example.com'
+
+  # send a signup email to the user, pass in the user object that   contains the user's email address
+  def welcome_email(user)
+    @user = user
+    @url  = 'http://monsite.fr/login'
+    mail( :to => @user.email,
+    :subject => 'Thanks for signing up for our amazing app' )
+  end
+
+  
+
 end
