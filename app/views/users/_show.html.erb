@@ -3,7 +3,7 @@
         <div class="col-lg-8 order-lg-2">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link ">Profile</a>
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link " >Profile</a>
                 </li>
                 <li class="nav-item">
             <a class="nav-link" <%= link_to "Modifier mon profil" %> </a>
@@ -24,7 +24,7 @@
                                 <tbody>                                    
                                     <tr>
                                         <td>
-                                            <strong><%=@user%>Affiche le numero de la commande</strong> 
+                                            <strong><%=@current_user.orders.each%>Affiche le numero de la commande</strong> 
                                             <button type="button" class="btn btn-info pull-right">Voir la commande</button>
                                         </td>
                                     </tr>
