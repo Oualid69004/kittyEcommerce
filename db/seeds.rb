@@ -11,7 +11,7 @@ images = [
   "kit4.png",
   "kit5.jpg",
   "kit6.jpg",
-  "kit7.png",
+  "kit1.jpg",
   "kit8.jpeg",
   "kit9.jpeg",
   "kti10.jpeg",
