@@ -37587,3 +37587,305 @@ Completed 200 OK in 110ms (Views: 93.0ms | ActiveRecord: 2.3ms)
 
 
 >>>>>>> master
+Started GET "/" for 127.0.0.1 at 2019-11-28 12:22:41 +0100
+  [1m[35m (18.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (1.5ms)
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:10
+  Rendered layouts/_item_index_row.html.erb (1505.1ms)
+  Rendered layouts/_item_index_row.html.erb (2.5ms)
+  Rendered layouts/_item_index_row.html.erb (2.5ms)
+  Rendered layouts/_item_index_row.html.erb (2.4ms)
+  Rendered layouts/_item_index_row.html.erb (3.4ms)
+  Rendered layouts/_item_index_row.html.erb (2.5ms)
+  Rendered layouts/_item_index_row.html.erb (2.5ms)
+  Rendered layouts/_item_index_row.html.erb (6.2ms)
+  Rendered layouts/_item_index_row.html.erb (3.9ms)
+  Rendered layouts/_item_index_row.html.erb (4.2ms)
+  Rendered items/index.html.erb within layouts/application (1600.0ms)
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "itemcarts" ON "items"."id" = "itemcarts"."item_id" WHERE "itemcarts"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:20
+  Rendered layouts/_navbar.html.erb (107.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 2140ms (Views: 1918.9ms | ActiveRecord: 37.3ms)
+
+
+Started GET "/panier/1" for 127.0.0.1 at 2019-11-28 12:22:51 +0100
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:78
+  [1m[36mItem Load (2.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "itemcarts" ON "items"."id" = "itemcarts"."item_id" WHERE "itemcarts"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/controllers/carts_controller.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:45
+  [1m[36mItemcart Load (3.7ms)[0m  [1m[34mSELECT  "itemcarts".* FROM "itemcarts" WHERE "itemcarts"."cart_id" = $1 AND "itemcarts"."item_id" = $2 ORDER BY "itemcarts"."id" ASC LIMIT $3[0m  [["cart_id", 1], ["item_id", 2], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:46
+  Rendered carts/show.html.erb within layouts/application (51.4ms)
+  Rendered layouts/_navbar.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 265ms (Views: 192.3ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/profile/edit" for 127.0.0.1 at 2019-11-28 12:23:00 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (1.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (3560.4ms)
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "itemcarts" ON "items"."id" = "itemcarts"."item_id" WHERE "itemcarts"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:20
+  Rendered layouts/_navbar.html.erb (7.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 3705ms (Views: 3690.4ms | ActiveRecord: 3.9ms)
+
+
+Started DELETE "/profile" for 127.0.0.1 at 2019-11-28 12:23:12 +0100
+Processing by Devise::RegistrationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rC9sR1E4+v34bT/llhR1tmZBQBXe9Y7artGIS9c6CQT6sNhXoY+HNkL7LQIZ7oFoOEdhXtko2J/a4ZWf6QgRMA=="}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-28 12:23:12 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (1.1ms)
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:10
+  Rendered layouts/_item_index_row.html.erb (6.5ms)
+  Rendered layouts/_item_index_row.html.erb (4.6ms)
+  Rendered layouts/_item_index_row.html.erb (3.1ms)
+  Rendered layouts/_item_index_row.html.erb (2.6ms)
+  Rendered layouts/_item_index_row.html.erb (2.4ms)
+  Rendered layouts/_item_index_row.html.erb (2.8ms)
+  Rendered layouts/_item_index_row.html.erb (2.8ms)
+  Rendered layouts/_item_index_row.html.erb (2.7ms)
+  Rendered layouts/_item_index_row.html.erb (5.5ms)
+  Rendered layouts/_item_index_row.html.erb (6.7ms)
+  Rendered items/index.html.erb within layouts/application (75.0ms)
+  Rendered layouts/_navbar.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 217ms (Views: 205.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/profile/sign_up" for 127.0.0.1 at 2019-11-28 12:23:16 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.7ms)
+  Rendered devise/shared/_links.html.erb (4.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 190ms (Views: 186.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile" for 127.0.0.1 at 2019-11-28 12:23:30 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XfFLwgf5eqOKs7BQqqyFS1UTM69PTxgLP9bJt81VzBH/ut0BTplTH6E/iLB/YsDqr7I9g4WUrCauVIHUyqDfbA==", "user"=>{"email"=>"wmersaoui@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wmersaoui@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "wmersaoui@gmail.com"], ["encrypted_password", "$2a$11$u579H5wE9hl.rOGzd0tBPO63nYZWptHAiClZQXwfgVYFviy/jCJ42"], ["created_at", "2019-11-28 11:23:31.188415"], ["updated_at", "2019-11-28 11:23:31.188415"]]
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.5ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (1.0ms)
+UserMailer#welcome_email: processed outbound mail in 603.5ms
+Sent mail to wmersaoui@gmail.com (565.0ms)
+Date: Thu, 28 Nov 2019 12:23:31 +0100
+From: any_from_address@example.com
+To: wmersaoui@gmail.com
+Message-ID: <5ddfae33db135_26193fea7203c5cc6352f@walid-ub.mail>
+Subject: Thanks for signing up for our amazing app
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfae33d3cf2_26193fea7203c5cc6343a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfae33d3cf2_26193fea7203c5cc6343a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgZXQgYmllbnZlbnVlIGNoZXogbm91cyAhDQo9PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+DQoNClR1IHQnZXMgaW5zY3JpdCBzdXIgbW9uc2l0ZS5mciBlbiB1dGlsaXNh
+bnQgbCdlLW1haWwgc3VpdmFudCA6IHdtZXJzYW91aUBnbWFpbC5jb20uDQoN
+ClBvdXIgYWNjw6lkZXIgw6AgdG9uIGVzcGFjZSBjbGllbnQsIGNvbm5lY3Rl
+LXRvaSB2aWEgOiBodHRwOi8vbW9uc2l0ZS5mci9sb2dpbi4NCg0Kw4AgdHLD
+qHMgdml0ZSBzdXIgbW9uc2l0ZS5mciAhDQo=
+
+----==_mimepart_5ddfae33d3cf2_26193fea7203c5cc6343a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+<head>=0D
+  <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+<body>=0D
+<h1>Salut et bienvenue chez nous !</h1>=0D
+<p>=0D
+  Tu t'es inscrit sur monsite.fr en utilisant l'e-mail suivant : wmersaou=
+i@gmail.com.=0D
+</p>=0D
+<p>=0D
+  Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : http://m=
+onsite.fr/login.=0D
+</p>=0D
+<p> =C3=80 tr=C3=A8s vite sur monsite.fr !=0D
+</body>=0D
+</html>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfae33d3cf2_26193fea7203c5cc6343a--
+
+  [1m[35m (59.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 1856ms (ActiveRecord: 63.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-28 12:23:32 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCart Create (1.6ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 12], ["created_at", "2019-11-28 11:23:32.580044"], ["updated_at", "2019-11-28 11:23:32.580044"]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "cart_id" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart_id", 4], ["updated_at", "2019-11-28 11:23:32.606484"], ["id", 12]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:8
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (1.4ms)
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:10
+  Rendered layouts/_item_index_row.html.erb (6.6ms)
+  Rendered layouts/_item_index_row.html.erb (3.3ms)
+  Rendered layouts/_item_index_row.html.erb (2.9ms)
+  Rendered layouts/_item_index_row.html.erb (2.8ms)
+  Rendered layouts/_item_index_row.html.erb (4.1ms)
+  Rendered layouts/_item_index_row.html.erb (3.8ms)
+  Rendered layouts/_item_index_row.html.erb (2.8ms)
+  Rendered layouts/_item_index_row.html.erb (2.7ms)
+  Rendered layouts/_item_index_row.html.erb (2.9ms)
+  Rendered layouts/_item_index_row.html.erb (3.0ms)
+  Rendered items/index.html.erb within layouts/application (68.5ms)
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "itemcarts" ON "items"."id" = "itemcarts"."item_id" WHERE "itemcarts"."cart_id" = $1[0m  [["cart_id", 4]]
+  ↳ app/views/layouts/_navbar.html.erb:20
+  Rendered layouts/_navbar.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 253ms (Views: 191.6ms | ActiveRecord: 28.8ms)
+
+
+Started DELETE "/profile/sign_out" for 127.0.0.1 at 2019-11-28 12:24:17 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vS5wMKIfBE0jl3k8et/MO6U3s6uh6loiga1e2MRRShaLwCFvva655DS8p1/oZ+G93bqvfdAlC0KzGwBp1ru82Q=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (1.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/walid/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 143ms (ActiveRecord: 22.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-28 12:24:19 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (1.0ms)
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:10
+  Rendered layouts/_item_index_row.html.erb (7.7ms)
+  Rendered layouts/_item_index_row.html.erb (5.0ms)
+  Rendered layouts/_item_index_row.html.erb (6.0ms)
+  Rendered layouts/_item_index_row.html.erb (2.2ms)
+  Rendered layouts/_item_index_row.html.erb (3.2ms)
+  Rendered layouts/_item_index_row.html.erb (2.6ms)
+  Rendered layouts/_item_index_row.html.erb (2.3ms)
+  Rendered layouts/_item_index_row.html.erb (3.2ms)
+  Rendered layouts/_item_index_row.html.erb (3.3ms)
+  Rendered layouts/_item_index_row.html.erb (2.9ms)
+  Rendered items/index.html.erb within layouts/application (98.6ms)
+  Rendered layouts/_navbar.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 269ms (Views: 240.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/profile/sign_in" for 127.0.0.1 at 2019-11-28 12:24:30 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1132.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1174.2ms)
+Completed 500 Internal Server Error in 1201ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x00007fd4d10c8598>:0x00007fd4dab4a9b8>
+Did you mean?  new_user_confirmation_path
+               user_confirmation_path):
+    11: <% end %>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end %>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  
+app/views/devise/shared/_links.html.erb:14:in `_app_views_devise_shared__links_html_erb__803716739200013806_70276093402020'
+app/views/devise/sessions/new.html.erb:37:in `_app_views_devise_sessions_new_html_erb___3307169538448577460_70276089531080'
