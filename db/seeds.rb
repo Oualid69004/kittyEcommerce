@@ -22,7 +22,7 @@ i = 0;
   Item.create(title: Faker::Address.street_address,
                     price: rand(10..500),
                    description: Faker::Address.full_address,
-                   image_url: images[i]
+                   image_url: 'kit.jpg'
                  )
   i += 1
 #  i = Image.new(item_id: i.id, description: 'Super appart', url: 'https://s-ec.bstatic.com/images/hotel/max1024x768/716/71622578.jpg')
