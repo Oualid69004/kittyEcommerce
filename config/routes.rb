@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'users/show'
   root to: 'items#index'
-
   resources :items, :path => "image" do
     resources :itemcart
   end
@@ -12,5 +11,9 @@ Rails.application.routes.draw do
   devise_for :users, :path => "profile"
 
   resources :admins
+
+  resources :users, only: [:show] do
+    resources :avatars, only: [:create]
+  end
 
 end
