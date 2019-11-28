@@ -16,6 +16,8 @@
         <td></td>
         <td><%= item.title %></td>
         <td><%= item.description %></td>
+        <br><br>
+        <td><%= image_tag(attachments[item.image_url].url) %></td>
         </tr>
       <% end %>
     </table>
