@@ -23727,3 +23727,208 @@ FOREIGN KEY ("blob_id")
   ↳ db/seeds.rb:22
   [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:22
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for ::1 at 2019-11-28 11:07:08 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sashiiredev/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  [1m[36mUser Load (58.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/sashiiredev/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 179ms (ActiveRecord: 64.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 11:07:08 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mCart Load (14.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (0.4ms)
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:11
+  Rendered layouts/_item_index_row.html.erb (923.3ms)
+  Rendered layouts/_item_index_row.html.erb (1.3ms)
+  Rendered layouts/_item_index_row.html.erb (1.3ms)
+  Rendered layouts/_item_index_row.html.erb (1.4ms)
+  Rendered layouts/_item_index_row.html.erb (1.2ms)
+  Rendered layouts/_item_index_row.html.erb (1.4ms)
+  Rendered layouts/_item_index_row.html.erb (1.3ms)
+  Rendered layouts/_item_index_row.html.erb (1.2ms)
+  Rendered layouts/_item_index_row.html.erb (1.3ms)
+  Rendered layouts/_item_index_row.html.erb (1.6ms)
+  Rendered layouts/_item_index_row.html.erb (0.6ms)
+  Rendered layouts/_item_index_row.html.erb (0.6ms)
+  Rendered layouts/_item_index_row.html.erb (0.5ms)
+  Rendered layouts/_item_index_row.html.erb (0.5ms)
+  Rendered layouts/_item_index_row.html.erb (0.6ms)
+  Rendered layouts/_item_index_row.html.erb (0.7ms)
+  Rendered layouts/_item_index_row.html.erb (0.7ms)
+  Rendered layouts/_item_index_row.html.erb (0.6ms)
+  Rendered layouts/_item_index_row.html.erb (0.5ms)
+  Rendered layouts/_item_index_row.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+  Rendered items/index.html.erb within layouts/application (1003.6ms)
+  [1m[36mItem Load (15.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "itemcarts" ON "items"."id" = "itemcarts"."item_id" WHERE "itemcarts"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:20
+  Rendered layouts/_navbar.html.erb (98.4ms)
+Completed 200 OK in 1276ms (Views: 1171.2ms | ActiveRecord: 45.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-11-28 11:07:22 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Oz3aRSZ7AtzWRQfTPS268pXZdmL8OfrTo4MYA/HKfpUng5CjScCFDYgL3+7qrK8n87SaFjc2Tzz7b069uqypAw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/sashiiredev/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/sashiiredev/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/sashiiredev/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 11:07:22 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_banner.html.erb (0.3ms)
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:11
+  Rendered layouts/_item_index_row.html.erb (2.0ms)
+  Rendered layouts/_item_index_row.html.erb (1.5ms)
+  Rendered layouts/_item_index_row.html.erb (1.4ms)
+  Rendered layouts/_item_index_row.html.erb (1.0ms)
+  Rendered layouts/_item_index_row.html.erb (0.8ms)
+  Rendered layouts/_item_index_row.html.erb (0.8ms)
+  Rendered layouts/_item_index_row.html.erb (0.8ms)
+  Rendered layouts/_item_index_row.html.erb (0.8ms)
+  Rendered layouts/_item_index_row.html.erb (0.9ms)
+  Rendered layouts/_item_index_row.html.erb (1.2ms)
+  Rendered layouts/_item_index_row.html.erb (1.2ms)
+  Rendered layouts/_item_index_row.html.erb (0.7ms)
+  Rendered layouts/_item_index_row.html.erb (0.9ms)
+  Rendered layouts/_item_index_row.html.erb (0.7ms)
+  Rendered layouts/_item_index_row.html.erb (0.5ms)
+  Rendered layouts/_item_index_row.html.erb (0.5ms)
+  Rendered layouts/_item_index_row.html.erb (0.4ms)
+  Rendered layouts/_item_index_row.html.erb (0.4ms)
+  Rendered layouts/_item_index_row.html.erb (0.3ms)
+  Rendered layouts/_item_index_row.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (38.8ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 109ms (Views: 103.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for ::1 at 2019-11-28 11:07:28 +0100
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/passwords/edit.html.erb within layouts/application (74.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 138ms (Views: 120.4ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/users/password" for ::1 at 2019-11-28 11:07:47 +0100
+Processing by Devise::PasswordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dYlsTu1+nUNFfT8eK52xFH+YcM8Z9BB8SZpK1MtbOil/sEu5+fJMy6t7bhXFgeVZf/TAwtNzTI6kJafAsjMm8g==", "user"=>{"reset_password_token"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Change my password"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "6bec37af0c5f791236c57ab648af52f6e040d69577277b4337a67e3719bb3e3d"], ["LIMIT", 1]]
+  ↳ /home/sashiiredev/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/passwords/edit.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 219ms (Views: 49.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-28 11:08:09 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 129ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-28 11:08:12 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJE56PjflycKA4xMF04DmFS9NfSe+3TABvmgCktHmmhL53g4HbGcC7DhgiA718nL6M3RaYMceUvdJA2XBlQGaA==", "user"=>{"email"=>"poultour@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "poultour@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJE56PjflycKA4xMF04DmFS9NfSe+3TABvmgCktHmmhL53g4HbGcC7DhgiA718nL6M3RaYMceUvdJA2XBlQGaA==", "user"=>{"email"=>"poultour@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 636ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-28 11:08:16 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eEFSKMW5NavHScp8Ei4KvOm+245H4wtH+ZIY9grSJGFyeHXf0TXkIylPm3f8Ml7x6dJrg41kV7UULfXic7o4ug==", "user"=>{"email"=>"poultour@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "poultour@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 401 Unauthorized in 6ms (ActiveRecord: 2.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eEFSKMW5NavHScp8Ei4KvOm+245H4wtH+ZIY9grSJGFyeHXf0TXkIylPm3f8Ml7x6dJrg41kV7UULfXic7o4ug==", "user"=>{"email"=>"poultour@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 220ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-28 11:08:17 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LeBvU0HanKHvU0OoATFSxYOdKn80E1z+qeFgjQKpgvsn2UikVVZNKQFVEqPvLQaIg/Gacv6UAAxEXo2Ze8GeIA==", "user"=>{"email"=>"poultour@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "poultour@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LeBvU0HanKHvU0OoATFSxYOdKn80E1z+qeFgjQKpgvsn2UikVVZNKQFVEqPvLQaIg/Gacv6UAAxEXo2Ze8GeIA==", "user"=>{"email"=>"poultour@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 190ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for ::1 at 2019-11-28 11:08:26 +0100
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/passwords/edit.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 55ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/users/password" for ::1 at 2019-11-28 11:08:46 +0100
+Processing by Devise::PasswordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5x7+Ll6BYY22+5TgNW+KYJ6pJBM9rB+Mu3xF74+obGXtJ9nZSg2wBVj9xevbc94tnsWUHvcrQ35Ww6j79sBwvg==", "user"=>{"reset_password_token"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Change my password"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "6bec37af0c5f791236c57ab648af52f6e040d69577277b4337a67e3719bb3e3d"], ["LIMIT", 1]]
+  ↳ /home/sashiiredev/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/passwords/edit.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 169ms (Views: 161.2ms | ActiveRecord: 0.6ms)
+
+
