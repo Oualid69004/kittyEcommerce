@@ -30,7 +30,27 @@
       <div class="form-group">
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
+
+
+
+        <div class="row">
+  <div class="column"> <%if @user.avatar.attached?%>
+        <%= image_tag @user.avatar, alt: 'avatar' %>
+      
+       <br>
+       <%end%>
+       <%= form_tag  multipart: true do %>
+       <%= file_field_tag :avatar %>
+        <%= submit_tag "add" %>
+        <% end %>
+</div>
+      <br>
       </div>
+  </div>
+  
+<br>
+  
+
       <div class="form-group">
         <%= f.submit "Update", class: 'btn btn-primary float-left' %>
         <%end%>
@@ -39,3 +59,4 @@
     <%= link_to "Back", :back %>
   </div>
 </section>
+
