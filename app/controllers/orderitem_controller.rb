@@ -1,9 +1,10 @@
 class OrderitemController < ApplicationController
   def create
-
-
-      # Amount in cents
-      @amount = 500
+      amount = 0
+      current_user.cart.items.each do |item|
+        amount += item.price
+      end
+      @amount = (amount * 100).round
 
       customer = Stripe::Customer.create({
         email: params[:stripeEmail],
@@ -16,7 +17,7 @@ class OrderitemController < ApplicationController
         description: 'Rails Stripe customer',
         currency: 'eur',
       })
-      
+
       order = Order.create(user: current_user)
       current_user.cart.items.each do |item|
         Orderitem.create(order: order, item: item)
