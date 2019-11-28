@@ -32,12 +32,12 @@
       <div class="input-group-prepend">
        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
       </div>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "confirmation password" %>    
-
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "confirmation password" %>
+<!--
         <div class="row">
   <div class="column"> <%if @user.avatar.attached?%>
         <%= image_tag @user.avatar, alt: 'avatar' %>
-      
+
        <br>
        <%end%>
        <%= form_tag  multipart: true do %>
@@ -47,14 +47,15 @@
 </div>
       <br>
       </div>
+      -->
   </div>
-  
-<br>
-  
- 
 
-  
- 
+<br>
+
+
+
+
+
   <div class="actions">
     <%= f.submit "Sign up", class:"btn btn-success btn-lg btn-block" %>
   </div>
